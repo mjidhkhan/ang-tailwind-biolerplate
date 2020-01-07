@@ -15,11 +15,8 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-builders/custom-webpack:browser",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
-              "customWebpackConfig": {
-              "path": "./webpack.config.js"
-            },
             "outputPath": "dist/ang-tailwind",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -68,15 +65,12 @@
           }
         },
         "serve": {
-          "builder": "@angular-builders/custom-webpack:dev-server",
+          "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "ang-tailwind:build"
           },
           "configurations": {
             "production": {
-              "customWebpackConfig": {
-                "path": "./webpack.config.js"
-              },
               "browserTarget": "ang-tailwind:build:production"
             }
           }
